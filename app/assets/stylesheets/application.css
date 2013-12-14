@@ -12,3 +12,40 @@
  *= require_self
  *= require_tree .
  */
+
+
+.main_yield {
+  background-color: white;
+  z-index: 5;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+.navbar-default {
+  background: url('http://idevrecipes.files.wordpress.com/2010/12/navbar-iphone.png');
+  background-size: contain;
+  border: none;
+  box-shadow: 5px 5px 5px #696969;
+}
+
+.body {
+  background: url('http://digit-brush.pl/galeria/albums/userpics/10054/len3.jpg'); 
+  background-position: absolute;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 1;
+
+  }
+
+.navbar-content {
+  text-align: right ;
+  float: right;
+}
+
+.middle_bar {
+  margin-top: 200px;
+  margin-bottom: -170px;
+  margin-left: 5%;
+  margin-right: 5%;
+}

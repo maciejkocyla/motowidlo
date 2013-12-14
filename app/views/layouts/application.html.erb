@@ -6,9 +6,18 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class = "body">
 
-<%= yield %>
+<%= render 'layouts/top_bar'%>
+<div class = "middle_bar">
+  <%= render 'layouts/middle_bar'%>
+</div>
+<div class = "main_yield jumbotron col-md-10 col-md-offset-1">
+  <div class = "col-md-10 col-md-offset-1">
+    <h1>"MOTOWIDLO"</h1><br/>
+    <%= yield %>
+  </div>
+</div>
 
 </body>
 </html>
