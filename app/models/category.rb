@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
 
-	has_many :categories
-	belongs_to :category
+	has_many :subcategories, class_name: "Category", foreign_key: "overcategory_id"
+	belongs_to :overcategory, class_name: "Category"
 	has_many :topics
 end

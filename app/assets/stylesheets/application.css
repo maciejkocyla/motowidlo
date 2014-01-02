@@ -26,6 +26,16 @@
   background-size: contain;
   border: none;
   box-shadow: 5px 5px 5px #696969;
+  a:link {
+    font-color: black;
+  }
+  a:visited {
+    font-color: black;
+  }
+  a:hover {
+    font-color: grey;
+  }
+
 }
 
 .body {
@@ -39,7 +49,17 @@
   }
 
 .navbar-content {
-  text-align: right ;
+  li {
+    margin-left: 10px;
+    margin-right: 10px;
+    }
+}
+
+.navbar-content.topleft_link {
+  float: left;
+}
+
+.navbar-content.topright_link {
   float: right;
 }
 
@@ -48,4 +68,23 @@
   margin-bottom: -170px;
   margin-left: 5%;
   margin-right: 5%;
+}
+
+.category_box {
+  background-color: lightgrey;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  font-size: 0.5em;
+  text-align: left;
+  box-shadow: 5px 5px 5px #696969;
+  padding: 5px;
+  margin-left: -35%;
+}
+
+.category_image {
+  margin: 5px 5px 5px 5px;
+}
+
+.category_options {
+  float: right;
 }
