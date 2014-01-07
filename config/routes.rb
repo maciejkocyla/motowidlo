@@ -1,4 +1,5 @@
 Motowidlo::Application.routes.draw do
+  get "users/new"
   resources :posts
 
   resources :topics
