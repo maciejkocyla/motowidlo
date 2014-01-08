@@ -2,6 +2,8 @@ Motowidlo::Application.routes.draw do
   get "users/new"
   resources :posts
 
+  resources :users
+
   resources :topics
 
   resources :categories
