@@ -1,3 +1,25 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form_labels {
+  text-align: right;
+  font-size: 0.7em;
+}
+
+.form_fields {
+  text-align: left;
+  font-size: 0.7em;
+}
+
+.user_column {
+  background-color: lightgrey;
+  text-align: center;
+  font-size: 0.7em;
+  box-shadow: 2px 2px 5px;
+}
+
+.gravatar {
+   margin: 15px;
+  box-shadow: 2px 2px 2px;
+}

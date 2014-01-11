@@ -10,10 +10,30 @@ describe "user pages" do
   end
 
   describe "signup page" do
-    before { visit signup_path }
+    before { visit new_user_path }
 
-    it { should have_content('Zarejestruj') }
+    it { should have_content('Nowy użytkownik: ') }
 
+    let(:submit) { "Utwórz konto" }
+    
+    describe "with invalid information" do
+      it "should not create a user" do
+        expect { click_button submit }.not_to change(User, :count)
+      end
+    end
+
+    describe "with valid info" do
+      before do
+        fill_in "Nazwa",            with: "Example User"
+        fill_in "Email",            with: "user@example.com"
+        fill_in "Hasło",            with: "foobar"
+        fill_in "Potwierdź hasło",  with: "foobar"
+      end
+
+      it "should create a user" do
+        expect { click_button submit }.to change(User, :count).by(1)
+      end
+    end
   end
 
 end
