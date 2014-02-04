@@ -1,0 +1,17 @@
+<h2> Zaloguj się: </h2>
+
+<div class = "row" >
+  <div class = "span6 offset3">
+    <%= form_for(:session, url: sessions_path) do |f|%>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.submit "zaloguj", class: "btn btn-inverse" %>
+    <% end %>
+    <p>nie masz jeszcze konta? zapraszamy do <%= link_to "rejestracji", rejestracja_path %> </p>
+  </div>
+</div>
+

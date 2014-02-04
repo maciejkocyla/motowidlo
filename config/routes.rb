@@ -1,13 +1,16 @@
 Motowidlo::Application.routes.draw do
-  get "users/new"
+#  get "users/new"
   resources :posts
-
   resources :users
-
   resources :topics
-
   resources :categories
+  resources :sessions, only: [ :new, :create, :destroy ]
+
   root 'categories#index'
+
+  match '/rejestracja',   to: 'users#new',         via: 'get' 
+  match '/zaloguj',       to: 'sessions#new',      via: 'get'
+  match '/wyloguj',       to: 'sessions#destroy',  via: 'delete'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
