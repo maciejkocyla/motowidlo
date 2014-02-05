@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121150506) do
+ActiveRecord::Schema.define(version: 20140204202151) do
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -25,14 +25,20 @@ ActiveRecord::Schema.define(version: 20140121150506) do
     t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "topic_id"
   end
+
+  add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"
 
   create_table "topics", force: true do |t|
     t.string   "name"
     t.string   "heading"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "category_id"
   end
+
+  add_index "topics", ["category_id"], name: "index_topics_on_category_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

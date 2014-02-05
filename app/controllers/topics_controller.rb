@@ -14,7 +14,8 @@ class TopicsController < ApplicationController
 
   # GET /topics/new
   def new
-    @topic = Topic.new
+    @category = Category.find_by(id: params[:category_id])
+    @topic = @category.topics.new
   end
 
   # GET /topics/1/edit
@@ -24,17 +25,15 @@ class TopicsController < ApplicationController
   # POST /topics
   # POST /topics.json
   def create
-    @topic = Topic.new(topic_params)
+    @category = Category.find_by(id: params[:category_id])
+    @topic = @category.topics.new(topic_params)
 
-    respond_to do |format|
       if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @topic }
+        flash[:success] = "temat został utworzony"
+        redirect_to [@category, @topic]
       else
-        format.html { render action: 'new' }
-        format.json { render json: @topic.errors, status: :unprocessable_entity }
+        flash[:error] = "coś poszło nie tak"
       end
-    end
   end
 
   # PATCH/PUT /topics/1
