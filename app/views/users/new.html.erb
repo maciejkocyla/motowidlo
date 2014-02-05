@@ -1,0 +1,44 @@
+<h2>Nowy użytkownik: </h2>
+
+<br/>
+    <%= form_for(@user) do |usr| %>
+      <%= render 'shared/error_messages'%>
+
+        <div class = "row">
+          <div class = "col-md-3 col-md-offset-1 form_labels">
+            <%= usr.label "Nazwa" %>
+            <br/>
+            <br/>
+            <%= usr.label "Email" %>
+            <br/>
+            <br/>
+            <%= usr.label "Hasło" %>
+            <br/>
+            <br/>
+            <%= usr.label "Potwierdź hasło" %>
+          </div>
+          <div class = "col-md-4 form_fields">
+            <%= usr.text_field :name %>
+            <br/>
+            <br/>
+            <%= usr.text_field :email %>
+            <br/>
+            <br/>
+            <%= usr.password_field :password %>
+            <br/>
+            <br/>
+            <%= usr.password_field :password_confirmation %>
+            <br/>
+            <br/>
+          </div>
+
+          <div class = "col-md-2">
+            <%= usr.submit "Utwórz konto", class: "btn" %>
+          </div>
+        </div>
+
+
+    <% end %>
+    <br/>
+
+  <h3>masz już konto? <%= link_to "zaloguj się", '#' %></h3>
