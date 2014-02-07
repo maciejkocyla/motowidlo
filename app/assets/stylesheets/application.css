@@ -13,30 +13,68 @@
  *= require_tree .
  */
 
+.html {
+  font-size: 0.7em;
+}
 
+html a:hover {
+  color: grey;
+  background-color: inherit;
+}
+
+.divider {
+  border-bottom: 1px solid;
+}
 .main_yield {
   background-color: white;
   z-index: 5;
   padding: 5px;
   border-radius: 20px;
 }
-
 .navbar-default {
   background: url('http://idevrecipes.files.wordpress.com/2010/12/navbar-iphone.png');
   background-size: contain;
   border: none;
+  padding-top: 5px;
   box-shadow: 5px 5px 5px #696969;
-  a:link {
-    font-color: black;
-  }
-  a:visited {
-    font-color: black;
-  }
-  a:hover {
-    font-color: grey;
-  }
-
 }
+
+.menu_button {
+  font-size: 1.1em;
+  padding-right: -20px;
+  margin-bottom: -16px;
+}
+.nav {
+  margin-left: 1%;
+}
+
+
+.navbar .nav a:focus, .navbar .nav a:hover {
+  color: black;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  padding-bottom: 25px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: lightgrey;
+}
+.submenus {
+  position: absolute;
+  margin-left: 2%;
+  z-index: 10;
+  width: 90%;
+  margin-top: -25px;
+}
+.submenu {
+  background-color: lightgrey;
+  border: 1px solid;
+  border-left: 2px solid;
+  display: block;
+  padding: 20px;
+  border-radius: 10px;
+  display: none;
+}
+
 
 .body {
   background: url('http://digit-brush.pl/galeria/albums/userpics/10054/len3.jpg'); 
@@ -64,11 +102,12 @@
 }
 
 .middle_bar {
-  margin-top: 200px;
-  margin-bottom: -170px;
+  margin-top: 220px;
+  margin-bottom: -200px;
   margin-left: 5%;
   margin-right: 5%;
 }
+
 
 .category_box {
   background-color: lightgrey;
@@ -87,4 +126,22 @@
 
 .category_options {
   float: right;
+}
+
+.topic_in_index {
+  background-color: lightgrey;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 2px 2px 2px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+.topics_name_in_index {
+  border-bottom: 1px solid;
+}
+
+.topics_heading_in_index {
+  font-size: 0.5em;
 }

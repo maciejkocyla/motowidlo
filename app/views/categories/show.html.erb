@@ -8,7 +8,14 @@
 <div class = "category_topics_index">
 
   <% @category.topics.all.each do |topic| %>
-    <%= link_to topic.name, category_topic_path(@category, topic) %>
+    <div class = "topic_in_index" >
+      <div class = "topics_name_in_index">
+        <%= link_to topic.name, category_topic_path(@category, topic) %>
+      </div>
+      <div class = "topics_heading_in_index">
+        <%= topic.heading %>
+      </div>
+    </div>
   <% end %>
 </div>
 

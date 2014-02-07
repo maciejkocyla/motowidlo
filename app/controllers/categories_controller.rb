@@ -24,8 +24,11 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    @category = Category.new(category_params)
-
+    if params[:category][:mother]
+      @category = Category.find_by(id: params[:category][:mother]).subcategories.new(category_params)
+    else
+      @category = Category.new(category_params)
+    end
     respond_to do |format|
       if @category.save
         format.html { redirect_to @category, notice: 'Category was successfully created.' }
