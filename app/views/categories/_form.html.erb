@@ -16,7 +16,9 @@
     <%= f.text_field :name %>
   </div>
   <div class="actions">
-    <%= f.hidden_field :mother, value: params[:mother]%>
+    <% if params[:mother] %>
+      <%= f.hidden_field :mother, value: params[:mother]%>
+    <% end %>
     <%= f.submit "utwórz" ,class: "btn btn primary" %>
   </div>
 <% end %>
