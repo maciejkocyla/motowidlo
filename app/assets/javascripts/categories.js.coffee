@@ -4,8 +4,13 @@
 #
 
 $ ->
-  
-  $("[data-menu-button]").hover ->
-    $("#submenu-"+$(this).data("menu-button")).slideToggle(5)
-  $("[data-submenu]").hover ->
-    $(this).slideToggle(1)
+
+  $("[data-button]").click ->
+    $(".subcategories_choice").slideUp(160)
+    $(".menu_button").removeClass("active_button")
+    $("#data_button_" + $(this).data("button")).addClass("active_button")
+    $("#subcategories_choice_" + $(this).data("button")).slideToggle(360)
+    return false
+
+  $(document).click ->
+    $(".subcategories_choice").slideUp("fast")

@@ -17,5 +17,6 @@
 //= require jquery.flip
 //= require jquery.flip.min
 //= require hovercard
+//= require clickoutside
 //= require categories
 //= require_tree .

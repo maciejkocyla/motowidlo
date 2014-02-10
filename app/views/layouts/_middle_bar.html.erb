@@ -1,29 +1,31 @@
 <nav class="navbar navbar-default" role="navigation">
 
-<ul class = "row nav">
-  <% Category.all.each do |cat|%>
-    <% if cat.overcategory.nil? %>
-      <li data-menu-button = "<%= cat.id %>" class = "menu_button col-md-1"><%= link_to cat.name, cat %></li>
-    <% end %>
-  <% end %>
+<ul class = "nav row">
+<% main_categories.each_with_index do |cat, index| %>
+  <li id = "data_button_<%= cat.id %>" data-button = "<%= cat.id %>" class = "menu_button col-md-1 <%= if active_overcategory && cat.id == active_overcategory.id then "active_button" end %> ">
+  <%= link_to cat.name %>
+  </li>
+<% end%>
 </ul>
+
+<% main_categories.each_with_index do |cat, index| %>
+
+  <div id = "subcategories_choice_<%= cat.id %>" class = "subcategories_choice col-md-4 col-md-offset-<%= index %>">
+
+    <div class = "subcategories_choice_links">
+      <% cat.subcategories.each do |sub| %>
+        <li><%= link_to sub.name, sub %></li>
+        <br/>
+      <% end %>
+    </div>
+
+    <div class = "divider"></div>
+
+    <%= link_to "nowa podkategoria", new_category_path(:mother => cat.id) %>
+    <br/>
+    <br/>
+
+  </div>
+
+<% end %>
 </nav>
-
-<div class = "row submenus">
-  <% Category.all.each_with_index do |cat, index| %>
-    <% if cat.overcategory.nil? %>
-      <div data-submenu = "<%= cat.id %>" id = "submenu-<%= cat.id %>" class = "submenu col-md-2 col-md-offset-<%= index %>">
-        <% cat.subcategories.each do |subcat|%>
-          <%= link_to subcat.name, subcat %>
-        <br/>
-        <% end %>
-        <br/>
-        <br/>
-        <div class="divider"></div>
-        <%= link_to "nowa kategoria", new_category_path(:mother => cat.id) %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
-
-

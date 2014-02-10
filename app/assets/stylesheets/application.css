@@ -36,43 +36,57 @@ html a:hover {
   background-size: contain;
   border: none;
   padding-top: 5px;
-  box-shadow: 5px 5px 5px #696969;
+  box-shadow: 5px 5px 5px ;
 }
 
 .menu_button {
   font-size: 1.1em;
-  padding-right: -20px;
-  margin-bottom: -18px;
+  margin-top: 15px;
+  margin-bottom: -1px;
+  text-align: center;
+  z-index: 11;
+}
+
+.navbar .nav .active_button {
+  padding: 5px;
+  padding-bottom: 7px;
+  background-color: #F7C265;
+  border-top: 1px solid;
+  border-left: 1px solid;
+  border-right: 1px solid;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  box-shadow: inset 2px 2px 2px;
+
 }
 .nav {
   margin-left: 1%;
 }
 
-
-.navbar .nav a:focus, .navbar .nav a:hover {
-  color: black;
-  border-top: 1px solid;
-  border-left: 1px solid;
-  padding-bottom: 25px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  background-color: lightgrey;
-}
-.submenus {
-  position: absolute;
-  margin-left: 2%;
-  z-index: 10;
-  width: 90%;
-  margin-top: -25px;
-}
-.submenu {
-  background-color: lightgrey;
-  border: 1px solid;
-  border-left: 2px solid;
-  display: block;
-  padding: 20px;
-  border-radius: 10px;
+.subcategories_choice {
   display: none;
+  opacity: 0.9;
+  position: absolute;
+  z-index: 10;
+  background-color: #F7C265;
+  border: solid 1px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 5px 5px 2px #696969;
+}
+
+.subcategories_choice_links {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+
+.navbar .nav a:focus, .navbar .nav a, .navbar .nav a:hover {
+  color: #996633;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0px;
+  background-color: inherit;
 }
 
 
@@ -86,13 +100,6 @@ html a:hover {
 
   }
 
-.navbar-content {
-  li {
-    margin-left: 10px;
-    margin-right: 10px;
-    }
-}
-
 .navbar-content.topleft_link {
   float: left;
 }
@@ -102,8 +109,8 @@ html a:hover {
 }
 
 .middle_bar {
-  margin-top: 220px;
-  margin-bottom: -200px;
+  margin-top: 300px;
+  margin-bottom: -290px;
   margin-left: 5%;
   margin-right: 5%;
 }
