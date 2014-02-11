@@ -104,8 +104,13 @@ html a:hover {
   float: left;
 }
 
-.navbar-content.topright_link {
+.topright_link {
   float: right;
+}
+
+.topright_link li {
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .middle_bar {
@@ -118,11 +123,10 @@ html a:hover {
 
 .category_box {
   background-color: lightgrey;
-  border-radius: 10px;
   margin-bottom: 10px;
   font-size: 0.5em;
   text-align: left;
-  box-shadow: 5px 5px 5px #696969;
+  box-shadow: 2px 2px 2px;
   padding: 5px;
   margin-left: -35%;
 }
@@ -141,7 +145,6 @@ html a:hover {
   padding-left: 20px;
   padding-right: 20px;
   box-shadow: 2px 2px 2px;
-  border-radius: 5px;
   margin-bottom: 15px;
 }
 

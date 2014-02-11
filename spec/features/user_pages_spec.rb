@@ -36,9 +36,9 @@ describe "user pages" do
     end
 
   describe "after saving the user" do
-    before { click_button submit }
+    before { click submit }
     let(:user) { User.find_by(email: 'user@example.com')}
-
+    it { should have_content('user@example.com') }
     it { should have_link('wyloguj')}
   end
 
