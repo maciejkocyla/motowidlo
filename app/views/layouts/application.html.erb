@@ -12,10 +12,17 @@
 <div class = "middle_bar">
   <%= render 'layouts/middle_bar'%>
 </div>
+
 <div class = "main_yield jumbotron col-md-10 col-md-offset-1">
-  <div class = "col-md-10 col-md-offset-1">
-    <%= link_to image_tag("http://www.retrotraktor.pl/artykuly/zniwiarka/5.jpg", width: 300, height: 200), root_url %>
+
+  <div class = "col-md-10 header">
+    <%= link_to image_tag("http://www.retrotraktor.pl/artykuly/zniwiarka/5.jpg", width: 300, height: 200), root_url, class: "col-md-5"%>
+    <h3 class = "col-md-6" style = "margin-top: 50px;">miejsce na chwytliwy tekst po którego przeczytaniu nikt nie będzie chciał opuścić tej strony</h3>
     <br/><br/><br/><br/>
+  </div>
+
+
+  <div class = "col-md-10 col-md-offset-1">
     <% flash.each do |key, value| %>
       <div class = "alert alert-<%= key %>"><%= value %></div>
     <% end %>

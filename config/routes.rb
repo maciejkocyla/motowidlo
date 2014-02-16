@@ -2,10 +2,11 @@ Motowidlo::Application.routes.draw do
 #  get "users/new"
   resources :users
   resources :categories do
-    resources :topics do
-      resources :posts
-    end
+    resources :topics
   end
+
+  resources :posts
+
   resources :sessions, only: [ :new, :create, :destroy ]
 
   root 'categories#index'

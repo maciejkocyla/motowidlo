@@ -31,6 +31,14 @@ html a:hover {
   padding: 5px;
   border-radius: 20px;
 }
+.main_yield img {
+  float: left;
+}
+
+.header {
+  margin-bottom: 100px;
+}
+
 .navbar-default {
   background: url('http://idevrecipes.files.wordpress.com/2010/12/navbar-iphone.png');
   background-size: contain;
