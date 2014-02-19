@@ -1,5 +1,8 @@
 <%= form_for(@post, controller: 'posts', action: 'create') do |post| %>
   <%= post.hidden_field :topic_id, value: @topic.id %>
+  <% if signed_in? %>
+    <%= post.hidden_field :user_id, value: current_user.id %>
+  <% end %>
   <%= post.text_field :content, value: "twoja odpowiedź"%>
   <%= post.submit "odpowiedz"%>
 

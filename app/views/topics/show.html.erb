@@ -6,25 +6,44 @@
 </h2>
 </p>
 
-<div class = "single_post">
+<div class = "single_post col-md-11">
   <%= @topic.heading %>
 </div>
 <br/>
 
 <% @topic.posts.each_with_index do |post, index| %>
-  <div class = "single_post single_post_<%= index % 2 %> col-md-11">
-    
-    <div class = "single_post_user col-md-3"> 
-    </div>
+  <% if post.content %>
+    <div class = "single_post single_post_<%= index % 2 %> col-md-11">
+      
+      <div class = "single_post_user col-md-3">
+        <% if post.user %>
+          <div class = "single_post_gravatar">
+            <%= gravatar_for(post.user, '90%' )%>
+          </div>
+          <%= post.user.name %>
+        <% else %>
+          <div class = "single_post_gravatar">
+            <%= image_tag 'http://icons.iconarchive.com/icons/visualpharm/icons8-metro-style/256/User-Role-Guest-icon.png', width: '90%' %>
+          </div>
+          Gość
+        <% end %>
+      </div>
 
-    <div class = "post_content col-md-9">
-      <%= post.content %>
-    </div>
+      <div class = "post_content col-md-8">
+        <% if post.content? %>
+          <%= post.content.truncate(130, separator: /\s/) %>
+        <% end %>
+      </div>
 
-  </div>
+    </div>
+  <% end %>
 <% end %>
 
+<div class = "single_post_form col-md-11">
+  <%= render 'post_form' %>
+</div>
+<br/>
 
-<%= render 'post_form' %><br/>
+
 <%= link_to 'Edit', edit_category_topic_path(@topic.category, @topic) %> |
 <%= link_to 'Back', category_path(@topic.category) %>

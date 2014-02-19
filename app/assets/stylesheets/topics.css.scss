@@ -4,18 +4,35 @@
 
 .single_post {
   background-color: #EBEBEB;  
-  margin: 7px;
+  margin: 5px;
+  margin-right: 7%;
   padding: 10px;
   font-size: 0.7em;
   box-shadow: 2px 2px 2px;
-}
+  }
 
-.single_post_1 {
-  background-color: #F2F2F2;
-  margin-left: 6%;
+.single_post_form {
+  background-color: brown;
+  margin-top: 10px;
+  margin-left: 1%;
+  margin-right: 7%;
+  padding: 10px;
 }
 
 .single_post_0 {
+  background-color: lightgrey;
+}
+
+.single_post_1 {
   background-color: #EBEBEB;
 
+}
+
+.single_post_user {
+  text-align: center;
+}
+
+.single_post_gravatar {
+  width: 90%;
+  margin-left: 5%;
 }
