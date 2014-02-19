@@ -3,7 +3,10 @@
   <% if signed_in? %>
     <%= post.hidden_field :user_id, value: current_user.id %>
   <% end %>
-  <%= post.text_field :content, value: "twoja odpowiedź"%>
-  <%= post.submit "odpowiedz"%>
+  <%= post.text_area :content, value: "twoja odpowiedź" , rows: 4 %>
+  <div class = "submit_button">
+    <%= post.submit "odpowiedz" %>
+  </div>
+
 
 <% end %>

@@ -40,7 +40,14 @@
 <% end %>
 
 <div class = "single_post_form col-md-11">
-  <%= render 'post_form' %>
+  <% if signed_in? %>
+    <div class = "single_post_user col-md-3">
+      <%= gravatar_for(current_user, '90%')%>
+    </div>
+  <% end %>
+  <div class = "col-md-9">
+    <%= render 'post_form' %>
+  </div> 
 </div>
 <br/>
 
