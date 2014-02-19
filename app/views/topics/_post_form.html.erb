@@ -1,0 +1,6 @@
+<%= form_for(@post, controller: 'posts', action: 'create') do |post| %>
+  <%= post.hidden_field :topic_id, value: @topic.id %>
+  <%= post.text_field :content, value: "twoja odpowiedź"%>
+  <%= post.submit "odpowiedz"%>
+
+<% end %>

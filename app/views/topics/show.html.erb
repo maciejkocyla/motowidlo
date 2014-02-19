@@ -9,13 +9,22 @@
 <div class = "single_post">
   <%= @topic.heading %>
 </div>
+<br/>
 
-<% @topic.posts.each do |post|%>
-  <div class = "single_post">
-    <%= post.content %>
+<% @topic.posts.each_with_index do |post, index| %>
+  <div class = "single_post single_post_<%= index % 2 %> col-md-11">
+    
+    <div class = "single_post_user col-md-3"> 
+    </div>
+
+    <div class = "post_content col-md-9">
+      <%= post.content %>
+    </div>
+
   </div>
 <% end %>
 
-  <%= button_to 'dodaj odpowiedź' %><br/>
-  <%= link_to 'Edit', edit_category_topic_path(@topic.category, @topic) %> |
-  <%= link_to 'Back', category_path(@topic.category) %>
+
+<%= render 'post_form' %><br/>
+<%= link_to 'Edit', edit_category_topic_path(@topic.category, @topic) %> |
+<%= link_to 'Back', category_path(@topic.category) %>
