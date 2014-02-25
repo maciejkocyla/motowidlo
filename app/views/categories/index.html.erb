@@ -2,9 +2,8 @@
   <% main_categories.each do |category| %>
     <div class = "category_box">
       <%= image_tag category.imageUrl, width: 10, height: 10, class: "category_image"%>
-      <%= category.name %>
+      <%= link_to category.name, category %>
       <div class = "category_options">
-        <%= link_to 'Show', category %>
         <%= link_to 'Edit', edit_category_path(category) %>
         <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
       </div>
@@ -16,4 +15,7 @@
 
 
 </div>
+
+<%= render 'last_topics'%>
+
 

@@ -1,0 +1,8 @@
+
+<div class = "last_topics col-md-7 col-md-offset-1">
+  <% last_topics(5).each do |t| %>
+    <div class = "topic_in_index">
+      <%= link_to t.name, category_topic_path(t.category.id, t.id) %>
+    </div>
+  <% end %>
+</div>
