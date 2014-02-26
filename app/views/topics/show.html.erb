@@ -17,8 +17,13 @@
       
       <div class = "single_post_user col-md-3">
         <% if post.user %>
-          <div class = "single_post_gravatar">
+          <div data-gravatar = "<%= post.user.id %>" id = "gravatar_<%= post.user.id %>" class = "single_post_gravatar">
             <%= gravatar_for(post.user, '90%' )%>
+          </div>
+          <div data-user-info = <%= post.user.id %> id = "user_info_<%= post.user.id %>" class = "single_post_user_data" style = "display: none">
+            <%= post.user.name %><br/>
+            liczba postów: <%= post.user.posts.count%><br/>
+            data rejestracji: <br/><%= post.user.created_at.strftime("%d.%m.%Yr.")%><br/>
           </div>
           <%= post.user.name %>
         <% else %>

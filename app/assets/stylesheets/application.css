@@ -157,7 +157,14 @@ html a:hover {
 }
 
 .topics_name_in_index {
-  border-bottom: 1px solid;
+  text-align: left;
+  float: left;
+}
+
+.topics_post_count {
+  text-align: right;
+  font-size: 0.7em;
+  font-color: grey;
 }
 
 .topics_heading_in_index {
