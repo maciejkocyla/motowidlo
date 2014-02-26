@@ -11,15 +11,18 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
+  <div class="field col-md-10">
+    <%= f.label :name, "temat: " %><br>
+    <%= f.text_field :name, cols: 50 %>
   </div>
-  <div class="field">
+  <div class="field col-md-10">
     <%= f.label :heading, "pierwszy wpis: " %><br>
-    <%= f.text_field :heading %>
+    <%= f.text_area :heading, cols: 50 %>
   </div>
-  <div class="actions">
+  
+  <%= f.hidden_field :user_id, value: current_user.id unless current_user.nil? %>
+
+  <div class="actions col-md-10">
     <%= f.submit "utwórz"%>
   </div>
 <% end %>

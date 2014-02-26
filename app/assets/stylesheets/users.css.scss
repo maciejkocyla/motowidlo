@@ -17,13 +17,28 @@
   margin-bottom: -23px;
 }
 .user_column {
-  background-color: lightgrey;
   text-align: center;
   font-size: 0.7em;
-  box-shadow: 2px 2px 5px;
 }
 
 .gravatar {
-   margin: 15px;
+  margin: 15px;
   box-shadow: 2px 2px 2px;
+}
+
+.user_main {
+  padding-left: 30px;
+  margin-bottom: 300px;
+}
+
+.user_mail {
+  float: left;
+  padding: 5px;
+}
+
+.user_box {
+  background-color: lightgrey;
+  box-shadow: 2px 2px 5px;
+  margin-bottom: 20px;
+  width: 100%;
 }
