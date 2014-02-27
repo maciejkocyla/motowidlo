@@ -1,25 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Kategoria:</strong>
   <%= @category.name %>
 </p>
 
 <div class = "category_topics_index">
 
-  <% @category.topics.all.each do |topic| %>
-    <div class = "topic_in_index row" >
-      <div class = "topics_name_in_index col-md-8">
-        <%= link_to topic.name, category_topic_path(@category, topic) %>
-      </div>
-      <div class = "topics_post_count col-md-4">
-        posty: <%= topic.posts.count %>
-      </div>
+  <% if @category.topics.any? %>
+    <% @category.topics.each do |topic| %>
+      <div class = "topic_in_index row" >
+        <div class = "topics_name_in_index col-md-8">
+          <%= link_to topic.name, category_topic_path(@category, topic) %>
+        </div>
+        <div class = "topics_post_count col-md-4">
+          posty: <%= topic.posts.count %>
+        </div>
 
-      <div class = "topics_heading_in_index col-md-8">
-        <%= topic.heading %>
+        <div class = "topics_heading_in_index col-md-8">
+          <%= topic.heading %>
+        </div>
       </div>
-    </div>
+    <% end %>
+  <% else %>
+    w tej kategorii nie ma jeszcze tematów. Bądź pierwszy !<br/><br/><br/>
   <% end %>
 </div>
 

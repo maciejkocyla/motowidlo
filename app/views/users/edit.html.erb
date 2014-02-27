@@ -1,0 +1,12 @@
+<h2>aktualizuj profil</h2>
+
+<%= form_for @user do |f|%>
+  <%= render 'shared/error_messages'%>
+
+  <%= f.text_field :name, value: "Imię" %>
+  <%= f.text_field :email, value: "email" %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation %>
+
+  <%= f.submit "zapisz zmiany" %>
+<% end %>

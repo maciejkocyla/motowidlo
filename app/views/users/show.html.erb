@@ -9,7 +9,8 @@
     <br/>
     <%= @user.email %>
     <br/>
-    <a href="http://gravatar.com/emails">zmień Gravatar </a>
+    <a href="http://gravatar.com/emails">zmień Gravatar </a><br/>
+    <%= link_to "aktualizuj profil", edit_user_path(@user)%>
   </div>
 
   <div class = "user_mail user_box">

@@ -6,7 +6,7 @@ describe "user pages" do
     let(:user) { FactoryGirl.create(:user) }
 
     before { visit user_path( user) }
-    it { should have_content(user.name) }
+    it { should_not have_content(user.name) }
   end
 
   describe "signup page" do
@@ -40,7 +40,21 @@ describe "user pages" do
         it { should have_content('user@example.com') }
         it { should have_link('wyloguj')}
       end
+    end
+  end
 
+  describe "edit" do
+    let(:user) { FactoryGirl.create(:user) }
+    before { sign_in user } 
+    before { visit edit_user_path(user) }
+
+    describe "page" do
+      it { should have_content("aktualizuj profil") }
+    end
+
+    describe "with invalid info" do
+      before { click_button('zapisz zmiany') }
+      it { should have_content('Formularz zawiera błędy: ') }
     end
   end
 

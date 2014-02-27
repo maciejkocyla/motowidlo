@@ -25,14 +25,14 @@ describe "creating topic and post: " do
 
       it { should have_content('sample topic') }
       it { should have_content('twoja odpowiedź') }
-      it { should have_button("dodaj odpowiedź") }
+      it { should have_button("odpowiedz") }
 
       describe " fill in post content" do
 
         before { fill_in 'post_content', with: "sample post content" }
 
         it "should create a post" do
-          expect { click_button 'dodaj odpowiedź'}.to change(Topic.last.posts, :count).by(1)
+          expect { click_button 'odpowiedz'}.to change(Topic.last.posts, :count).by(1)
         end
       end
     end
