@@ -24,15 +24,11 @@
     Twoje ostatnie tematy: 
     <% if @user.topics.count >= 5 %>
       <% @user.topics[-5..-1].each do |topic| %>
-        <div class = "single_post">
-          <%= link_to topic.name, category_topic_path(topic.category, topic) %>
-        </div>
+        <%= render 'topics/topic', topic: topic %>
       <% end %>
     <% elsif @user.topics.count < 5 %>
       <% @user.topics.each do |topic| %>
-        <div class = "single_post">
-          <%= link_to topic.name, category_topic_path(topic.category, topic) %>
-        </div>
+        <%= render 'topics/topic', topic: topic %>
       <% end %>
     <% else %>
       nie masz żadnych tematów.

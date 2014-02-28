@@ -1,0 +1,12 @@
+<div class = "topic_in_index row">
+  <div class = "col-md-9">
+    <%= link_to topic.name.truncate(40), category_topic_path(topic.category, topic) %>
+  </div>
+  <div class = "col-md-3">Posty: <%= topic.posts.count %></div><br/>
+  <% if topic.heading? %>
+    <div class = "topic_heading_in_index col-md-12">
+      <%= topic.heading.truncate(100) %>
+    </div>
+  <% end %>
+</div>
+

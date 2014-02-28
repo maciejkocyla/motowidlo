@@ -51,3 +51,17 @@
   position: absolute;
   z-index: 25;
 }
+
+.topic_heading_in_index {
+  border-top: 1px solid;
+  font-size: 0.7em;
+}
+.topic_in_index {
+  background-color: lightgrey;
+  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-shadow: 2px 2px 2px;
+  margin-bottom: 15px;
+  font-size: 0.7em;
+}

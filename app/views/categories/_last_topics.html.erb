@@ -1,11 +1,7 @@
 <h2>Ostatnio dodane tematy: </h2>
 
 <% if last_topics(5) != 0 %>
-    <% last_topics(5).each do |t| %>
-      <div class = "topic_in_index">
-        <%= link_to t.name, category_topic_path(t.category.id, t.id) %>
-        w kategorii
-        <%= link_to t.category.name, t.category%>
-      </div>
-    <% end %>
+  <% last_topics(5).each do |t| %>
+    <%= render 'topics/topic', topic: t %>
+  <% end %>
 <% end %>

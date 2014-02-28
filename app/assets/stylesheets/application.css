@@ -151,15 +151,6 @@ html a:hover {
   float: right;
 }
 
-.topic_in_index {
-  background-color: lightgrey;
-  padding: 5px;
-  padding-left: 20px;
-  padding-right: 20px;
-  box-shadow: 2px 2px 2px;
-  margin-bottom: 15px;
-  font-size: 0.6em;
-}
 
 .topics_name_in_index {
   text-align: left;

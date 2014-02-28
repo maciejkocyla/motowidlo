@@ -1,10 +1,5 @@
 <h2> Gorące tematy: </h2>
 
 <% active_topics(5).each do |topic|%>
-  <div class = "topic_in_index">
-    <%= link_to topic.name, category_topic_path(topic.category, topic) %>
-    w kategorii 
-    <%= link_to topic.category.name, category_path(topic.category)%>
-  </div>
-
+  <%= render 'topics/topic', topic: topic %>
 <% end %>
