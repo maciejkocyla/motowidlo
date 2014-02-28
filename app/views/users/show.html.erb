@@ -1,43 +1,44 @@
-<div class = "col-md-4 user_column">
-  <div class = "user_box">
-    <%= render 'gravatar' %>
+<div class = "row">
+  <div class = "col-md-4 user_column">
+    <div class = "user_box">
+      <%= render 'gravatar' %>
 
-    <br/>
+      <br/>
 
-    <%= @user.name %>
+      <%= @user.name %>
 
-    <br/>
-    <%= @user.email %>
-    <br/>
-    <a href="http://gravatar.com/emails">zmień Gravatar </a><br/>
-    <%= link_to "aktualizuj profil", edit_user_path(@user)%>
+      <br/>
+      <%= @user.email %>
+      <br/>
+      <a href="http://gravatar.com/emails">zmień Gravatar </a><br/>
+      <%= link_to "aktualizuj profil", edit_user_path(@user)%>
+    </div>
+
+    <div class = "user_mail user_box">
+      nie masz żadnych wiadomości
+    </div>
   </div>
 
-  <div class = "user_mail user_box">
-    nie masz żadnych wiadomości
-  </div>
-</div>
 
-
-<div class = "user_main col-md-8">
-  Twoje ostatnie tematy: 
-  <% if @user.topics.count >= 5 %>
-    <% @user.topics[-5..-1].each do |topic| %>
-      <div class = "single_post">
-        <%= link_to topic.name, category_topic_path(topic.category, topic) %>
-      </div>
-    <% end %>
+  <div class = "user_main col-md-8">
+    Twoje ostatnie tematy: 
+    <% if @user.topics.count >= 5 %>
+      <% @user.topics[-5..-1].each do |topic| %>
+        <div class = "single_post">
+          <%= link_to topic.name, category_topic_path(topic.category, topic) %>
+        </div>
+      <% end %>
     <% elsif @user.topics.count < 5 %>
       <% @user.topics.each do |topic| %>
         <div class = "single_post">
-        <%= link_to topic.name, category_topic_path(topic.category, topic) %>
+          <%= link_to topic.name, category_topic_path(topic.category, topic) %>
         </div>
       <% end %>
     <% else %>
       nie masz żadnych tematów.
     <% end %>
+  </div>
 </div>
-
 
 
 

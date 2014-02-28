@@ -1,3 +1,4 @@
+<div class = "row">
 <%= form_for(@topic, url: category_topics_path(@category)) do |f| %>
   <% if @topic.errors.any? %>
     <div id="error_explanation">
@@ -26,3 +27,5 @@
     <%= f.submit "utwórz"%>
   </div>
 <% end %>
+
+</div>

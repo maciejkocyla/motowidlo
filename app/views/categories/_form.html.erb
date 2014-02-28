@@ -15,6 +15,10 @@
     <%= f.label "nazwa nowej kategorii: " %><br>
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+    <%= f.label "link do obrazka: " %><br>
+    <%= f.text_field :imageUrl %>
+  </div>
   <div class="actions">
     <% if params[:mother] %>
       <%= f.hidden_field :mother, value: params[:mother]%>

@@ -4,19 +4,23 @@
     <h2>Kategorie: </h2>
   <% main_categories.each do |category| %>
     <div class = "category_box">
-      <%= image_tag category.imageUrl, width: 10, height: 10, class: "category_image"%>
+      <%= image_tag category.imageUrl, width: 20, height: 20, class: "category_image" unless category.imageUrl.nil? %>
       <%= link_to category.name, category %>
       <div class = "category_options">
-        <%= link_to 'Edit', edit_category_path(category) %>
-        <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% if root? %>
+          <%= link_to 'Edit', edit_category_path(category) %>
+          <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
       </div>
     </div>
   <% end %>
-<br>
-<%= link_to 'nowa kategoria', new_category_path %>
+  <br>
+  <% if root? %>
+    <%= link_to 'nowa kategoria', new_category_path %>
+  <% end %>
 </div>
 
-<%= image_tag 'http://blenderartists.org/forum/attachment.php?attachmentid=201976&d=1352306706', width: '10%', height: '700px', class: 'divider_image' %>
+<%= image_tag 'http://blenderartists.org/forum/attachment.php?attachmentid=201976&d=1352306706', width: '10%', height: '770px', class: 'divider_image' %>
 
 <div class = " col-md-7">
   <%= render 'last_topics' %>
