@@ -33,6 +33,13 @@
     <% else %>
       nie masz żadnych tematów.
     <% end %>
+
+    jesteś aktywny w:
+    <% @user.activities.each do |a| %>
+      <%= render 'topics/topic', topic: a %> 
+    <% end %>
+      
+
   </div>
 </div>
 

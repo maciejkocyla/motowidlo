@@ -22,6 +22,14 @@ class User < ActiveRecord::Base
     Digest::SHA1.hexdigest(token.to_s)
   end
 
+  def activities
+    active = Array.new 
+    self.posts.last(10).each do |post| 
+      active.push(post.topic) unless active.include?(post.topic)
+    end 
+    return active
+  end
+
   private
 
     def create_remember_token

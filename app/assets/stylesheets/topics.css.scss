@@ -55,13 +55,28 @@
 .topic_heading_in_index {
   border-top: 1px solid;
   font-size: 0.7em;
+  font-weight: bold;
 }
 .topic_in_index {
-  background-color: lightgrey;
   padding: 5px;
   padding-left: 20px;
   padding-right: 20px;
   box-shadow: 2px 2px 2px;
   margin-bottom: 15px;
   font-size: 0.7em;
+}
+
+.topic_in_index a, .topic_in_index a:hover {
+  color: #000000;
+  font-weight: bold;
+}
+
+.topic_in_index_1 {
+  background: url('http://i.ebayimg.com/00/s/ODAwWDgwMA==/z/Rl0AAOxy3NBSj89G/$_35.JPG?set_id=8800005007');
+}
+.topic_in_index_2 {
+  background: url('http://www.homedepot.com/catalog/productImages/300/ea/ea6414f8-670f-4a6b-ab80-867d73f92271_300.jpg');
+}
+.topic_in_index_3 {
+  background: url('http://www.homedepot.com/catalog/productImages/400/c9/c912c79c-1550-48cc-aedb-e2e53b0df56e_400.jpg');
 }

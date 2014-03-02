@@ -6,46 +6,47 @@
 </h2>
 </p>
 
-<div class = "single_post col-md-11">
-  <div class = "single_post_user col-md-3 ">
-    <%= render 'single_post_user', post: @topic %>
-  </div>
-  <div class = "post_content col-md-8">
-    <%= @topic.heading %>
-  </div>
+<div class = "row">
+  <div class = "single_post col-md-11">
+    <div class = "single_post_user col-md-3 ">
+      <%= render 'single_post_user', post: @topic %>
+    </div>
+    <div class = "post_content col-md-8">
+      <%= @topic.heading %>
+    </div>
 
-</div>
-<br/>
+  </div>
+  <br/>
 
-<% @topic.posts.each_with_index do |post, index| %>
-  <% if post.content %>
-    <div class = "single_post single_post_<%= index % 2 %> col-md-11">
+  <% @topic.posts.each_with_index do |post, index| %>
+    <% if post.content %>
+      <div class = "single_post single_post_<%= index % 2 %> col-md-11">
+        <div class = "single_post_user col-md-3">
+          <%= render 'single_post_user', post: post %>
+        </div>
+
+        <div class = "post_content col-md-8">
+          <% if post.content? %>
+            <%= post.content.truncate(230, separator: /\s/) %>
+          <% end %>
+        </div>
+
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class = "single_post_form col-md-11">
+    <% if signed_in? %>
       <div class = "single_post_user col-md-3">
-        <%= render 'single_post_user', post: post %>
+        <%= gravatar_for(current_user, '90%')%>
       </div>
-
-      <div class = "post_content col-md-8">
-        <% if post.content? %>
-          <%= post.content.truncate(230, separator: /\s/) %>
-        <% end %>
-      </div>
-
-    </div>
-  <% end %>
-<% end %>
-
-<div class = "single_post_form col-md-11">
-  <% if signed_in? %>
-    <div class = "single_post_user col-md-3">
-      <%= gravatar_for(current_user, '90%')%>
-    </div>
-  <% end %>
-  <div class = "col-md-9">
-    <%= render 'post_form' %>
-  </div> 
-</div>
-<br/>
-
+    <% end %>
+    <div class = "col-md-9">
+      <%= render 'post_form' %>
+    </div> 
+  </div>
+  <br/>
+  </div>
 
 <%= link_to 'Edit', edit_category_topic_path(@topic.category, @topic) %> |
 <%= link_to 'Back', category_path(@topic.category) %>

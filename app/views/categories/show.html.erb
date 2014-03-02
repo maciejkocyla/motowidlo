@@ -5,29 +5,36 @@
   <%= @category.name %>
 </p>
 
-
-<% if @category.overcategory.nil? %>
-  Wybierz podkategorię:<br/> 
-  <% @category.subcategories.each do |cat| %>
-    <%= cat.name %><br/>
-  <% end %>
-<% else %>
-  <div class = "category_topics_index">
-    <% if @category.topics.any? %>
-      <% @category.topics.each do |topic| %>
-        <%= render 'topics/topic', topic: topic %>
-      <% end %>
-    <% else %>
-      w tej kategorii nie ma jeszcze tematów. Bądź pierwszy !<br/><br/><br/>
+<div class = "row">
+  <% if @category.overcategory.nil? %>
+    Wybierz podkategorię:<br/> 
+    <% @category.subcategories.each do |cat| %>
+      <div class = "category_box col-md-7 col-md-offset-1">
+        <%= link_to cat.name, cat %>
+      </div>
     <% end %>
-  </div>
-<% end %>
+  <% else %>
+    <div class = "category_topics_index col-md-9 col-md-offset-1">
+      <% if @category.topics.any? %>
+        <% @category.topics.each do |topic| %>
+          <%= render 'topics/topic', topic: topic %>
+        <% end %>
+      <% else %>
+        w tej kategorii nie ma jeszcze tematów. Bądź pierwszy !<br/><br/><br/>
+      <% end %>
+    </div>
+  <% end %>
+</div>
 
-<% if signed_in? && @category.overcategory %>
-  <%= link_to 'nowy temat', new_category_topic_path(@category) %> |
-<% end %>
-<% if root? %>
-  <%= link_to 'Edytuj kategorię', edit_category_path(@category) %> |
-  <%= link_to 'dodaj podkategorię', new_category_path(:mother => @category.id) %> |
-<% end %>
-<%= link_to 'wróć', categories_path %>
+
+<div class = "row">
+  <% if signed_in? && @category.overcategory %>
+    <%= link_to 'nowy temat', new_category_topic_path(@category) %> |
+  <% end %>
+  <% if root? %>
+    <%= link_to 'Edytuj kategorię', edit_category_path(@category) %> |
+    <%= link_to 'dodaj podkategorię', new_category_path(:mother => @category.id) %> |
+  <% end %>
+  <%= link_to 'wróć', categories_path %>
+</div>
+
