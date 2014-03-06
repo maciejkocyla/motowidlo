@@ -11,6 +11,7 @@ class TopicsController < ApplicationController
   # GET /topics/1.json
   def show
     @post = @topic.posts.build(params[:post])
+    @posts = @topic.posts.page(params[:page]).per(5)
   end
 
   # GET /topics/new
