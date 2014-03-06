@@ -8,12 +8,12 @@ $ ->
   ready = ->
     
     $("[data-gravatar]").click ->
-      $('#gravatar_' + $(this).data("gravatar")).slideToggle(500)
-      $('#user_info_' + $(this).data("gravatar")).slideToggle(500)
+      $(".post_#{$(this).data('post')} #gravatar_#{$(this).data('gravatar')}").slideToggle(500)
+      $(".post_#{$(this).data('post')} #user_info_#{$(this).data('gravatar')}").slideToggle(500)
 
     $("[data-user-info]").click ->
-      $('#gravatar_' + $(this).data("user-info")).slideToggle(500)
-      $('#user_info_' + $(this).data("user-info")).slideToggle(500)
+      $(".post_#{$(this).data('post')} #gravatar_#{$(this).data('user-info')}").slideToggle(500)
+      $(".post_#{$(this).data('post')} #user_info_#{$(this).data('user-info')}").slideToggle(500)
 
   $(document).ready(ready)
   $(document).on('page:load', ready)

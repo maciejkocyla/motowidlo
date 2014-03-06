@@ -1,0 +1,92 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.new_message_modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: black;
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+}
+
+.modal_content {
+  display: none;
+  position: fixed;
+  z-index: 110;
+  background-color: white;
+  margin-top: -200px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 5px black;
+}
+
+.modal_content h2 {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.modal_content input {
+  margin-bottom: 30px;
+}
+
+.modal_content label {
+  text-align: right;
+}
+
+.modal_content .btn {
+  margin-top: 30px;
+}
+
+.modal_content select {
+  margin-left: 10px;
+  margin-right: 20%;
+  text-align: center;
+  padding: 10px;
+}
+
+.modal_content img {
+  float: right;
+}
+
+.single_message {
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  display: none;
+}
+
+.single_message .message_title {
+  font-size: 0.6em;
+}
+
+.single_message .message_content {
+  font-size: 0.8em;
+}
+
+.message_sent {
+  box-shadow: -1px 2px 2px black;
+  margin-left: 5%;
+  text-align: left;
+}
+
+.message_received {
+  box-shadow: 1px 2px 2px black;
+  margin-left: 20%;
+  text-align: right;
+}
+
+.contact_btn {
+  background-color: lightgrey;
+  float: left;
+  margin: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: 2px 2px 2px black;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,28 @@
+<div class = "new_message_modal">
+</div>
+
+<div class = "modal_content col-md-6 col-md-offset-3" >
+  <%= image_tag 'http://bookriot.com/wp-content/uploads/2013/07/x.png', width: 10, height: 10 %>
+  <h2 >Nowa wiadomość: </h2>
+  <%= form_for Message.new do |m| %>
+    <div class = "row">
+      <%= m.label "tytuł wiadomości: ", class: 'col-md-4'%>
+      <%= m.text_field :title, class: 'col-md-7 '%>
+    </div>
+
+    <div class = "row">
+      <%= m.label "adresat: ", class: 'col-md-4'%>
+      <%= m.text_field :recipient_id, value: params[:contact], class: 'col-md-4'%>
+    </div>
+
+    <div class = "row">
+      <%= m.label "treść: ", class: 'col-md-4'%>
+      <%= m.text_area :content, rows: 8, class: 'col-md-7 '%>
+    </div>
+    
+    <%= m.hidden_field :author_id, value: current_user.id unless current_user.nil? %>
+    <%= m.submit "wyślij", class: 'col-md-offset-8 col-md-3 btn' %>
+  <% end %>
+</div>
+
+

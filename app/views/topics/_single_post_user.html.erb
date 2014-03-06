@@ -1,13 +1,24 @@
-<% if post.user %>
-  <div data-gravatar = "<%= post.user.id %>" id = "gravatar_<%= post.user.id %>" class = "single_post_gravatar">
+<% if post.user && post.kind_of?(Post) %>
+  <div data-gravatar = "<%= post.user.id %>" data-post = <%= post.id %> id = "gravatar_<%= post.user.id %>" class = "single_post_gravatar">
     <%= gravatar_for(post.user, '80%' )%>
   </div>
-  <div data-user-info = <%= post.user.id %> id = "user_info_<%= post.user.id %>" class = "single_post_user_data" style = "display: none">
-    <%= post.user.name %><br/>
-    liczba postów: <%= post.user.posts.count%><br/>
-    data rejestracji: <br/><%= post.user.created_at.strftime("%d.%m.%Yr.")%><br/>
+  <div data-post = <%= post.id %> data-user-info = <%= post.user.id %> id = "user_info_<%= post.user.id %>" class = "single_post_user_data" style = "display: none">
+    ostatnia aktywność: <%= post.user.last_seen.strftime(" %d.%m.%Yr.") unless post.user.last_seen.nil?%><br/>
+    data rejestracji: <%= post.user.created_at.strftime("%d.%m.%Yr.")%><br/>
+    liczba postów: <%= post.user.posts.count%>
+    <div id = "new_message_link_<%= post.user.id %>" data-message-link = <%= post.user.name %>><%= link_to "wyślij wiadomość","javascript:void(0)" %></div>
   </div>
   <%= post.user.name %>
+<% elsif post.user && post.kind_of?(Topic) %>
+  <div data-gravatar = "<%= post.user.id %>" data-post = 0 id = "gravatar_<%= post.user.id %>" class = "single_post_gravatar">
+    <%= gravatar_for(post.user, '80%' )%>
+  </div>
+  <div data-post = 0 data-user-info = <%= post.user.id %> id = "user_info_<%= post.user.id %>" class = "single_post_user_data" style = "display: none">
+    ostatnia aktywność: <%= post.user.last_seen.strftime(" %d.%m.%Yr.") unless post.user.last_seen.nil?%><br/>
+    data rejestracji: <%= post.user.created_at.strftime("%d.%m.%Yr.")%><br/>
+    liczba postów: <%= post.user.posts.count%>
+    <div id = "new_message_link_<%= post.user.id %>" data-message-link = <%= post.user.name %>><%= link_to "wyślij wiadomość","javascript:void(0)" %></div>
+  </div>
 <% else %>
   <div class = "single_post_gravatar">
     <%= image_tag 'http://icons.iconarchive.com/icons/visualpharm/icons8-metro-style/256/User-Role-Guest-icon.png', width: '70%' %>

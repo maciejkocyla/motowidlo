@@ -49,8 +49,13 @@ html a:hover {
   background: url('http://idevrecipes.files.wordpress.com/2010/12/navbar-iphone.png');
   background-size: contain;
   border: none;
+  z-index: 10;
   padding-top: 5px;
   box-shadow: 5px 5px 5px ;
+}
+
+.navbar-fixed-top {
+  z-index: 11;
 }
 
 .menu_button {
@@ -136,7 +141,7 @@ html a:hover {
 
 
 .category_box {
-  background-color: #F4A460;
+  background: url( 'http://majesmas.info/homeplace/imagecall.php?fl=l526y5o4d4n2w2p4o4n4t294h4l4b4w5f4s5o4t5r5j554942474g4j424t5n4k454l474k4d5a4g464k5n5x5v2p5n243x2t2n2x2x203m2z284x244m3c5e5f4q2z29413n2g4v5k5' );
   background-size: contain;
   margin-bottom: 10px;
   font-size: 0.8em;
@@ -146,10 +151,10 @@ html a:hover {
 }
 
 .category_box a {
-  color: white;
+  color: black;
 }
 .category_box a:visited {
-  color: white;
+  color: black;
 }
 
 .category_image {
