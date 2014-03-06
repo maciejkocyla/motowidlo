@@ -1,0 +1,32 @@
+<div class = "messages_box">
+  <h2>wiadomości: </h2>
+  <div class = "row">
+    <div class = "contacts col-md-10" >
+      <% user_contacts.each do |c| %>
+        <div data-activate-link = <%= c.id %>><%= link_to c.name, "javascript:void(0)", class: "contact_btn"%></div>
+      <% end %>
+    </div>
+    <div class = "col-md-2">
+      <% user_contacts.each do |c| %>
+        <div id = "invisible_link_<%= c.id %>" style = "display: none; float: right;" data-no-turbolink data-message-link = <%= c.name %>><%= link_to "odpisz", "javascript:void(0)" %></div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class = "divider"></div>
+
+  <div class = "row">
+    <% if user_msgs.any? %>
+      <% user_msgs.each do |m| %>
+        <div class = "single_message col-md-9 <%= "message_sent message_by_#{m.recipient.id}" unless m.author != current_user %>
+          <%= "message_received message_by_#{m.author.id}" unless m.recipient != current_user %>">
+          <div class = "message_title"><%= m.title %></div>
+          <div class = "message_content"><%= m.content %></div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+  
+</div>
+
+

@@ -1,4 +1,6 @@
 Motowidlo::Application.routes.draw do
+  resources :messages
+
 #  get "users/new"
   resources :users
   resources :categories do

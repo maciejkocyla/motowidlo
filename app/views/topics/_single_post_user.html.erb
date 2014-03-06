@@ -6,6 +6,7 @@
     <%= post.user.name %><br/>
     liczba postów: <%= post.user.posts.count%><br/>
     data rejestracji: <br/><%= post.user.created_at.strftime("%d.%m.%Yr.")%><br/>
+    <div id = "new_message_link_<%= post.user.id %>" data-message-link = <%= post.user.name %>><%= link_to "wyślij wiadomość","javascript:void(0)" %></div>
   </div>
   <%= post.user.name %>
 <% else %>
