@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_secure_password
 
   before_save { self.email = email.downcase }
-  before_save :create_remember_token
+  before_save :create_remember_token, :set_last_seen
 
   validates :password, length: { minimum: 6 }
   validates :name, presence: true, length: { maximum: 25 }
@@ -36,5 +36,9 @@ class User < ActiveRecord::Base
       if self.remember_token.nil?
         self.remember_token = User.encrypt(User.new_remember_token)
       end
+    end
+
+    def set_last_seen
+      self.last_seen = Time.now
     end
 end
