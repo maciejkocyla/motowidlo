@@ -29,12 +29,12 @@
 
 <div class = "row">
   <% if signed_in? && @category.overcategory %>
-    <%= link_to 'nowy temat', new_category_topic_path(@category) %> |
+    <%= button_to 'nowy temat', new_category_topic_path(@category), class: "btn col-md-2" %> 
   <% end %>
   <% if root? %>
-    <%= link_to 'Edytuj kategorię', edit_category_path(@category) %> |
-    <%= link_to 'dodaj podkategorię', new_category_path(:mother => @category.id) %> |
+    <%= button_to 'Edytuj kategorię', edit_category_path(@category), class: "btn col-md-2 col-md-offset-1" %> 
+    <%= button_to 'dodaj podkategorię', new_category_path(:mother => @category.id), class: "btn col-md-2 col-md-offset-1" %> 
   <% end %>
-  <%= link_to 'wróć', categories_path %>
+  <%= button_to 'wróć', categories_path, class: "btn col-md-2 col-md-offset-1" %>
 </div>
 

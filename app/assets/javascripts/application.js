@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require twitter/bootstrap
+//= require bootstrap-wysihtml5/b3
 //= require jquery.flip
 //= require jquery.flip.min
 //= require hovercard

@@ -7,6 +7,8 @@ gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
                           :branch => '3.0.0'
 gem 'bcrypt-ruby', '3.0.0'
 gem 'kaminari'
+gem 'bootstrap-wysihtml5-rails', :require => 'bootstrap-wysihtml5-rails',
+                              :git => 'git://github.com/Nerian/bootstrap-wysihtml5-rails.git'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 

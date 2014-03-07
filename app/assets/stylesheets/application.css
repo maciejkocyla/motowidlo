@@ -9,6 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require twitter/bootstrap
+ *= require bootstrap-wysihtml5/b3
  *= require_self
  *= require_tree .
  */
@@ -20,6 +21,10 @@
 html a:hover {
   color: grey;
   background-color: inherit;
+}
+
+.no-display {
+  display: none;
 }
 
 .divider_image{
@@ -150,6 +155,11 @@ html a:hover {
   padding: 5px;
 }
 
+.sub {
+  text-align: right;
+  margin-left: 30%;
+}
+
 .category_box a {
   color: black;
 }
@@ -180,4 +190,72 @@ html a:hover {
 
 .topics_heading_in_index {
   font-size: 0.5em;
+}
+
+.wysiwyg-color-black {
+  color: black;
+}
+
+.wysiwyg-color-silver {
+  color: silver;
+}
+
+.wysiwyg-color-gray {
+  color: gray;
+}
+
+.wysiwyg-color-white {
+  color: white;
+}
+
+.wysiwyg-color-maroon {
+  color: maroon;
+}
+
+.wysiwyg-color-red {
+  color: red;
+}
+
+.wysiwyg-color-purple {
+  color: purple;
+}
+
+.wysiwyg-color-fuchsia {
+  color: fuchsia;
+}
+
+.wysiwyg-color-green {
+  color: green;
+}
+
+.wysiwyg-color-lime {
+  color: lime;
+}
+
+.wysiwyg-color-olive {
+  color: olive;
+}
+
+.wysiwyg-color-yellow {
+  color: yellow;
+}
+
+.wysiwyg-color-navy {
+  color: navy;
+}
+
+.wysiwyg-color-blue {
+  color: blue;
+}
+
+.wysiwyg-color-teal {
+  color: teal;
+}
+
+.wysiwyg-color-aqua {
+  color: aqua;
+}
+
+.wysiwyg-color-orange {
+  color: orange;
 }

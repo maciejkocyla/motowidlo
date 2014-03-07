@@ -5,7 +5,7 @@
  * Licensed under the Apache License v2.0
  * http://www.apache.org/licenses/LICENSE-2.0
  *
- * Designed and built with all the love in the world by @mdo and @fat.
+ * Designed and built with all the love in the world by mdo and @fat.
  */
 /*! normalize.css v2.1.0 | MIT License | git.io/normalize */
 article,
@@ -1946,7 +1946,7 @@ input[type="button"].btn-block {
   top: 1px;
   display: inline-block;
   font-family: 'Glyphicons Halflings';
-  font-style: normal;/Users/maciejkocyla/projekty/motowidlo/public/assets/application-63eaa2779ab139e271f834fde3635b96.css
+  font-style: normal;
   font-weight: normal;
   line-height: 1;
   -webkit-font-smoothing: antialiased; }
@@ -2661,7 +2661,7 @@ input[type="button"].btn-block {
   bottom: 100%;
   margin-bottom: 1px; }
 
-@media (min-width: 768px) {
+Fmedia (min-width: 768px) {
   .navbar-right .dropdown-menu {
     right: 0;
     left: auto; } }
@@ -5011,6 +5011,102 @@ td.visible-print {
   th.hidden-print,
   td.hidden-print {
     display: none !important; } }
+ul.wysihtml5-toolbar {
+	margin: 0;
+	padding: 0;
+	display: block;
+}
+
+ul.wysihtml5-toolbar::after {
+	clear: both;
+	display: table;
+	content: "";
+}
+
+ul.wysihtml5-toolbar > li {
+	float: left;
+	display: list-item;
+	list-style: none;
+	margin: 0 5px 10px 0;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command=bold] {
+	font-weight: bold;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command=italic] {
+	font-style: italic;
+}
+
+ul.wysihtml5-toolbar a[data-wysihtml5-command=underline] {
+	text-decoration: underline;
+}
+
+ul.wysihtml5-commands-disabled .dropdown-menu {
+	display: none !important;
+}
+
+ul.wysihtml5-toolbar div.wysihtml5-colors {
+  display:block;
+  width: 50px;
+  height: 20px;
+  margin-top: 2px;
+  margin-left: 5px;
+  position: absolute;
+  pointer-events: none;
+}
+
+ul.wysihtml5-toolbar a.wysihtml5-colors-title {
+  padding-left: 70px;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="black"] {
+  background: black !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="silver"] {
+  background: silver !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="gray"] {
+  background: gray !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="maroon"] {
+  background: maroon !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="red"] {
+  background: red !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="purple"] {
+  background: purple !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="green"] {
+  background: green !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="olive"] {
+  background: olive !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="navy"] {
+  background: navy !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="blue"] {
+  background: blue !important;
+}
+
+ul.wysihtml5-toolbar div[data-wysihtml5-command-value="orange"] {
+  background: orange !important;
+}
+/*
+
+*/
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
@@ -5024,6 +5120,7 @@ td.visible-print {
 
 
 
+
  */
 
 
@@ -5034,6 +5131,10 @@ td.visible-print {
 html a:hover {
   color: grey;
   background-color: inherit;
+}
+
+.no-display {
+  display: none;
 }
 
 .divider_image{
@@ -5063,10 +5164,13 @@ html a:hover {
   background: url('http://idevrecipes.files.wordpress.com/2010/12/navbar-iphone.png');
   background-size: contain;
   border: none;
-  z-index: 6;
-  position: relative;
+  z-index: 10;
   padding-top: 5px;
   box-shadow: 5px 5px 5px ;
+}
+
+.navbar-fixed-top {
+  z-index: 11;
 }
 
 .menu_button {
@@ -5161,6 +5265,11 @@ html a:hover {
   padding: 5px;
 }
 
+.sub {
+  text-align: right;
+  margin-left: 30%;
+}
+
 .category_box a {
   color: black;
 }
@@ -5208,7 +5317,7 @@ html a:hover {
   position: fixed;
   z-index: 110;
   background-color: white;
-  margin-top: 100px;
+  margin-top: -200px;
   padding: 20px;
   border-radius: 20px;
   box-shadow: 5px 5px 5px black; }
@@ -5231,6 +5340,41 @@ html a:hover {
   margin-right: 20%;
   text-align: center;
   padding: 10px; }
+
+.modal_content img {
+  float: right; }
+
+.single_message {
+  background-color: white;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 10px;
+  display: none; }
+
+.single_message .message_title {
+  font-size: 0.6em; }
+
+.single_message .message_content {
+  font-size: 0.8em; }
+
+.message_sent {
+  box-shadow: -1px 2px 2px black;
+  margin-left: 5%;
+  text-align: left; }
+
+.message_received {
+  box-shadow: 1px 2px 2px black;
+  margin-left: 20%;
+  text-align: right; }
+
+.contact_btn {
+  background-color: lightgrey;
+  float: left;
+  margin: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  box-shadow: 2px 2px 2px black;
+  margin-bottom: 20px; }
 body {
   background-color: #fff;
   color: #333;
@@ -5320,6 +5464,9 @@ div.field, div.actions {
 .single_post_gravatar {
   width: 100%; }
 
+.single_post_gravatar img {
+  margin-left: 5%; }
+
 .submit_button {
   margin-top: -37px;
   text-align: right;
@@ -5381,7 +5528,8 @@ div.field, div.actions {
   padding: 5px; }
 
 .user_box {
-  background-color: lightgrey;
+  background: url("http://wallsaved.com/wp-content/uploads/2014/01/beige-wallpaper.jpg");
+  background-size: contain;
   box-shadow: 2px 2px 5px;
   margin-bottom: 20px;
   width: 100%; }

@@ -22,7 +22,7 @@
 }
 
 .single_post_form textarea {
-  margin-top: 14px;
+  margin-top: 5px;
   width: 90%;
 }
 
@@ -42,6 +42,19 @@
 
 .single_post_gravatar {
   width: 100%;
+}
+
+.single_post_gravatar img {
+  margin-left: 5%;
+}
+
+.post_content img{
+  max-width: 150px;
+  max-height: 150px;
+}
+
+.post_content {
+  color: none;
 }
 
 .submit_button {

@@ -19,9 +19,10 @@
     liczba postów: <%= post.user.posts.count%>
     <div id = "new_message_link_<%= post.user.id %>" data-message-link = <%= post.user.name %>><%= link_to "wyślij wiadomość","javascript:void(0)" %></div>
   </div>
+  <%= post.user.name %>
 <% else %>
   <div class = "single_post_gravatar">
-    <%= image_tag 'http://icons.iconarchive.com/icons/visualpharm/icons8-metro-style/256/User-Role-Guest-icon.png', width: '70%' %>
+    <%= image_tag 'http://icons.iconarchive.com/icons/visualpharm/icons8-metro-style/256/User-Role-Guest-icon.png', width: '80%' %>
   </div>
   Gość
 <% end %>

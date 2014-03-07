@@ -15,5 +15,8 @@ $ ->
     $(document).click ->
       $(".subcategories_choice").slideUp("fast")
 
+    $('[data-sub]').click ->
+      $("#sub_#{$(this).data('sub')}").toggle(500)
+
   $(document).ready(ready)
   $(document).on('page:load', ready)

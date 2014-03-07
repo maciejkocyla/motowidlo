@@ -15,6 +15,13 @@ $ ->
       $(".post_#{$(this).data('post')} #gravatar_#{$(this).data('user-info')}").slideToggle(500)
       $(".post_#{$(this).data('post')} #user_info_#{$(this).data('user-info')}").slideToggle(500)
 
+    $('#post_content').wysihtml5({
+                                  "font-styles": false,
+                                  "lists": true,
+                                  "image": true,
+                                  "color": true
+                                  })
+
   $(document).ready(ready)
   $(document).on('page:load', ready)
 
