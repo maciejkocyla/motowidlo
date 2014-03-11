@@ -41,12 +41,10 @@ end
 group :production do
   gem 'rspec-rails'
   gem 'rails_12factor'
-  gem 'pg'
 end
+  
+gem 'pg'
 
-group :development do
-  gem 'sqlite3'
-end
 
 group :test do
   gem 'selenium-webdriver'
