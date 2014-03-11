@@ -21,6 +21,13 @@
 
 
   <div class = "user_main col-md-8">
+    <% if @user.likes.any? %>
+      Tematy, które mogą Cię zainteresować: <br/>
+      <% @user.likes.each do |cat| %>
+        <%= render 'topics/topic', topic: cat.topics.last unless cat.topics.empty? %>
+      <% end %>
+    <% end %>
+
     Twoje ostatnie tematy: <br/>
     <% if @user.topics.count >= 5 %>
       <% @user.topics[-5..-1].each do |topic| %>
