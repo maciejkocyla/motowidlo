@@ -15,6 +15,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      if params[:categories].any?
+        params[:categories].each do |cat|
+          Interest.create(category: Category.find_by(id: cat), user: @user)
+        end
+      end
       sign_in @user
       flash[:success] = "Witamy w gronie użytkowników Motowidła :) "
       redirect_to @user

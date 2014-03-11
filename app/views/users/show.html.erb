@@ -21,20 +21,20 @@
 
 
   <div class = "user_main col-md-8">
-    Twoje ostatnie tematy: 
+    Twoje ostatnie tematy: <br/>
     <% if @user.topics.count >= 5 %>
       <% @user.topics[-5..-1].each do |topic| %>
         <%= render 'topics/topic', topic: topic %>
       <% end %>
-    <% elsif @user.topics.count < 5 %>
+    <% elsif @user.topics.count < 5 && @user.topics.any? %>
       <% @user.topics.each do |topic| %>
         <%= render 'topics/topic', topic: topic %>
       <% end %>
     <% else %>
-      nie masz żadnych tematów.
+      nie utworzyłeś jeszcze żadnych tematów. Śmiało! na pewno znajdziesz tu coś dla siebie :) <br/>
     <% end %>
 
-    jesteś aktywny w:
+    <%= "jesteś aktywny w:" unless @user.activities.empty? %>
     <% @user.activities.each do |a| %>
       <%= render 'topics/topic', topic: a %> 
     <% end %>

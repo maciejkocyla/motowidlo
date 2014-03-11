@@ -29,7 +29,7 @@
 
 <div class = "row">
   <% if signed_in? && @category.overcategory %>
-    <%= button_to 'nowy temat', new_category_topic_path(@category), class: "btn col-md-2" %> 
+    <%= button_to 'nowy temat', new_category_topic_path(@category), method: :get, class: "btn col-md-2" %> 
   <% end %>
   <% if root? %>
     <%= button_to 'Edytuj kategorię', edit_category_path(@category), class: "btn col-md-2 col-md-offset-1" %> 
