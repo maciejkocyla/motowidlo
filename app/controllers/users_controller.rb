@@ -15,7 +15,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      if params[:categories].any?
+      if params[:categories] && params[:categories].any?
         params[:categories].each do |cat|
           Interest.create(category: Category.find_by(id: cat), user: @user)
         end
