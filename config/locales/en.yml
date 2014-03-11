@@ -25,8 +25,8 @@ en:
 en:
   views:
     pagination:
-      first: "&laquo; pierwsza strona"
-      last: "ostatnia strona &raquo;"
-      previous: "&lsaquo; poprzednia strona"
-      next: "następna strona &rsaquo;"
+      first: "&laquo;"
+      last: "&raquo;"
+      previous: "&lsaquo;"
+      next: "&rsaquo;"
       truncate: "..."

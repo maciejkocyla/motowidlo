@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
@@ -10,7 +11,6 @@ gem 'kaminari'
 gem 'bootstrap-wysihtml5-rails', :require => 'bootstrap-wysihtml5-rails',
                               :git => 'git://github.com/Nerian/bootstrap-wysihtml5-rails.git'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -40,7 +40,12 @@ end
 
 group :production do
   gem 'rspec-rails'
+  gem 'rails_12factor'
 end
+  
+gem 'pg'
+
+
 group :test do
   gem 'selenium-webdriver'
   gem 'capybara'

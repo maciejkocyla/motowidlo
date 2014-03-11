@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :topics
+  has_many :interests
+  has_many :likes, through: :interests, source: :category
 
   has_secure_password
 
