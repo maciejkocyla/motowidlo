@@ -10,7 +10,6 @@ gem 'kaminari'
 gem 'bootstrap-wysihtml5-rails', :require => 'bootstrap-wysihtml5-rails',
                               :git => 'git://github.com/Nerian/bootstrap-wysihtml5-rails.git'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -43,6 +42,11 @@ group :production do
   gem 'rails_12factor'
   gem 'pg'
 end
+
+group :development do
+  gem 'sqlite3'
+end
+
 group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
