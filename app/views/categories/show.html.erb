@@ -35,6 +35,6 @@
     <%= button_to 'Edytuj kategorię', edit_category_path(@category), class: "btn col-md-2 col-md-offset-1" %> 
     <%= button_to 'dodaj podkategorię', new_category_path(:mother => @category.id), class: "btn col-md-2 col-md-offset-1" %> 
   <% end %>
-  <%= button_to 'wróć', categories_path, class: "btn col-md-2 col-md-offset-1" %>
+  <%= button_to 'wróć', root_url, class: "btn col-md-2 col-md-offset-1" %>
 </div>
 

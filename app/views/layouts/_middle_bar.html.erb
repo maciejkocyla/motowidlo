@@ -15,6 +15,9 @@
     <div class = "subcategories_choice_links">
       <% cat.subcategories.each do |sub| %>
         <li><%= link_to sub.name, sub %></li>
+        <% if root? %>
+          <div style = " float: right; "><%= link_to "destroy", cat, method: 'delete' %></div>
+        <% end %>
         <br/>
       <% end %>
     </div>
