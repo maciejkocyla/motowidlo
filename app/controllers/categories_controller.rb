@@ -24,19 +24,17 @@ class CategoriesController < ApplicationController
   # POST /categories
   # POST /categories.json
   def create
-    if params[:category][:mother]
+    if params[:category] && params[:category][:mother]
       @category = Category.find_by(id: params[:category][:mother]).subcategories.new(category_params)
     else
       @category = Category.new(category_params)
     end
-    respond_to do |format|
-      if @category.save
-        format.html { redirect_to @category, notice: 'Category was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @category }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @category.errors, status: :unprocessable_entity }
-      end
+    if @category.save
+      flash["success"] = "kategoria utworzona"
+      redirect_to root_url
+    else
+      flash["coś poszło nie tak, spróbuj jeszcze raz"]
+      redirect_to new_category_path
     end
   end
 
