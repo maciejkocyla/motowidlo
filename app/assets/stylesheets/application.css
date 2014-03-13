@@ -146,8 +146,7 @@ html a:hover {
 
 
 .category_box {
-  background: url( 'http://majesmas.info/homeplace/imagecall.php?fl=l526y5o4d4n2w2p4o4n4t294h4l4b4w5f4s5o4t5r5j554942474g4j424t5n4k454l474k4d5a4g464k5n5x5v2p5n243x2t2n2x2x203m2z284x244m3c5e5f4q2z29413n2g4v5k5' );
-  background-size: contain;
+  background: url( 'http://www.kuprolety.pl/fotki/Image/len12.jpg' );
   margin-bottom: 10px;
   font-size: 0.8em;
   text-align: left;
@@ -156,12 +155,13 @@ html a:hover {
 }
 
 .sub {
+  padding: 2px;
   text-align: right;
-  margin-left: 15%;
+  margin-left: 10%;
 }
 
 .sub a {
-  font-size: 0.6em;
+  font-size: 0.7em;
 }
 
 .category_box a {
