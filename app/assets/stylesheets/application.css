@@ -157,7 +157,10 @@ html a:hover {
 
 .sub {
   text-align: right;
-  margin-left: 30%;
+  margin-left: 15%;
+}
+
+.sub a {
   font-size: 0.6em;
 }
 
