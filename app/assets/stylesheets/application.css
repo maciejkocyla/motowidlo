@@ -75,7 +75,7 @@ html a:hover {
 .navbar .nav .active_button {
   padding: 5px;
   padding-bottom: 8px;
-  background-color: rgba(inherit, inherit, inherit, 0.5);
+  background-color: rgba(0, 0, 0, 0);
   /* background-color: #F7C265; */
   border-top: 1px solid;
   border-left: 1px solid;
