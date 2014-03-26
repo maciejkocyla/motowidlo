@@ -27,6 +27,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
       if @post.save
+        Topic.reindex
         redirect_to category_topic_path(@post.topic.category, @post.topic)
       else
         redirect_to category_topic_path(@post.topic.category, @post.topic)
