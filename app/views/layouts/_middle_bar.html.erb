@@ -13,19 +13,22 @@
   <div id = "subcategories_choice_<%= cat.id %>" class = "subcategories_choice col-md-4 col-md-offset-<%= index %>">
 
     <div class = "subcategories_choice_links">
+      <br/>
       <% cat.subcategories.each do |sub| %>
-        <li><%= link_to sub.name, sub %></li>
+        <%= link_to sub.name, sub %>
+
         <% if root? %>
-          <div style = " float: right; "><%= link_to "destroy", cat, method: 'delete' %></div>
+          <div style = " float: right; "><%= link_to "usuń", sub, method: 'delete' %></div>
         <% end %>
-        <br/>
+        <br/><br/>
       <% end %>
     </div>
 
-    <div class = "divider"></div>
-
-    <%= link_to "nowa podkategoria", new_category_path(:mother => cat.id) %>
-    <br/>
+    <% if root? %>
+      <div class = "divider"></div>
+      <%= link_to "nowa podkategoria", new_category_path(:mother => cat.id) %>
+      <br/>
+    <% end %>
     <br/>
 
   </div>

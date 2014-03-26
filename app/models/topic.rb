@@ -24,4 +24,14 @@ class Topic < ActiveRecord::Base
       self.created_at
     end
   end
+
+  searchable do
+    
+    text :name, :boost => 10
+    text :heading
+
+    text :posts do
+      posts.map { |post| post.content }
+    end
+  end
 end

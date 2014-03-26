@@ -1,0 +1,15 @@
+<div class = "row">
+  <div class = "search_results">
+    <% if @search && @search.total > 0 %>
+      <h3>Wyniki wyszukiwania ( <%= @search.total %> ):</h3> <br/>
+      <div class = "col-md-10 col-md-offset-1"> 
+        <% @search.each_hit_with_result do |hit, topic| %>
+          <%= render 'topics/topic', topic: topic %>
+        <% end %>
+      </div>
+    <% else %>
+      Twoje wyszukiwanie nie przyniosło rezultatów. Spróbuj innej frazy.
+    <% end %>
+    <br/>
+  </div>
+</div>

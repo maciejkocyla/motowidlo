@@ -14,10 +14,15 @@
   <ul class = "nav navbar-nav">
     <li><%= link_to "sklep", '#' %></li>
   </ul>
-  <div class="input-group col-md-3 col-md-offset-7">
-      <input type="text" class="form-control">
-      <span class="input-group-addon" style = "color: brown; border-top-right-radius: 15px;">wyszukaj</span>
+  <div class = "navbar-form ">
+    <%= form_tag topics_path, method: :get do %>
+      <div class = "form-group col-md-offset-4 col-md-3"> 
+        <%= text_field_tag :search, params[:search], class: "form-control"%>
       </div>
+      <%= submit_tag "szukaj", class: "btn" %>
+    <% end %>
+
   </div>
 </nav>
+
 

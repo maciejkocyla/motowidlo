@@ -5,6 +5,9 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = Topic.all
+    @search = Topic.search do
+      fulltext params[:search]
+    end
   end
 
   # GET /topics/1

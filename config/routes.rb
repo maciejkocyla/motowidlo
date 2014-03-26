@@ -3,6 +3,7 @@ Motowidlo::Application.routes.draw do
 
 #  get "users/new"
   resources :users
+  resources :topics, only: [:index]
   resources :categories do
     resources :topics
   end
