@@ -5,8 +5,11 @@ class TopicsController < ApplicationController
   # GET /topics.json
   def index
     @topics = Topic.all
-    @search = Topic.search do
-      fulltext params[:search]
+      
+    if !Rails.env.production?
+      @search = Topic.search do
+        fulltext params[:search]
+      end
     end
   end
 
