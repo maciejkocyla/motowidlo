@@ -1,7 +1,11 @@
 <div class = "row">
   
-  <div class = "col-md-3">
+  <div class = "col-md-4">
+
     <h3>zapraszamy na blogi:</h3>
+    
+    <%= render 'layouts/blog_section' %>
+    
     <h3>Kategorie: </h3>
     <% main_categories.each do |category| %>
       <div class = "category_box">
@@ -29,7 +33,6 @@
     <% end %>
   </div>
 
-  <%= image_tag 'http://blenderartists.org/forum/attachment.php?attachmentid=201976&d=1352306706', width: '10%', height: '1000px', class: 'divider_image' %>
 
   <div class = " col-md-7">
     <%= render 'last_topics' %>
@@ -37,5 +40,4 @@
     <%= render 'active_topics' %>
   </div>
 
-  <%= image_tag 'http://nastoletniaczarownica.files.wordpress.com/2013/10/przedza.jpg?w=593', width: '6%'%>
 </div>

@@ -1,0 +1,13 @@
+<div class = "blog_section col-md-11">
+
+  <% BlogArticle.all.each do |a| %>
+    <%= link_to a.blog_url, target: "_blank" do %>
+      <div class = "blog_article"> 
+        <%= a.title %><br/>
+        <div class = "divider"> </div>
+        <p><%= a.content.truncate(300, separator: " ") %></p>
+      </div>
+    <% end %>
+  <% end %>
+
+</div>

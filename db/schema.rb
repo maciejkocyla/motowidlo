@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140307145350) do
+ActiveRecord::Schema.define(version: 20140328121500) do
+
+  create_table "blog_articles", force: true do |t|
+    t.string   "title"
+    t.text     "content"
+    t.string   "blog_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "categories", force: true do |t|
     t.string   "name"
@@ -69,6 +77,7 @@ ActiveRecord::Schema.define(version: 20140307145350) do
     t.string   "remember_token"
     t.boolean  "admin"
     t.datetime "last_seen"
+    t.string   "avatar_url"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true

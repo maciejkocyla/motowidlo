@@ -69,6 +69,9 @@ GEM
       factory_girl (~> 4.3.0)
       railties (>= 3.0.0)
     ffi (1.9.3)
+    gravatar-ultimate (2.0.0)
+      activesupport (>= 2.3.14)
+      rack
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -190,9 +193,11 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.0.0)
   factory_girl_rails
+  gravatar-ultimate
   jbuilder (~> 1.2)
   jquery-rails
   kaminari
+  nokogiri
   pg
   rails (= 4.0.0)
   rails_12factor

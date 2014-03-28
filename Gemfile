@@ -10,6 +10,8 @@ gem 'bcrypt-ruby', '3.0.0'
 gem 'kaminari'
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+gem 'nokogiri'
+gem 'gravatar-ultimate'
 gem 'bootstrap-wysihtml5-rails', :require => 'bootstrap-wysihtml5-rails',
                               :git => 'git://github.com/Nerian/bootstrap-wysihtml5-rails.git'
 # Use sqlite3 as the database for Active Record
