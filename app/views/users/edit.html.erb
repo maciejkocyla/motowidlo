@@ -3,25 +3,39 @@
 <%= form_for @user do |f|%>
   <%= render 'shared/error_messages'%>
 
-  <table>
+  <table class = "table table-striped col-md-8">
+
     <tr>
-      <td><%= f.label "nazwa użytkownika" %></td>
+      <td><%= f.label :name, "nazwa użytkownika" %></td>
       <td><%= f.text_field :name %></td>
     </tr>
+
     <tr>
-      <td><%= f.label "email" %></td>
+      <td><%= f.label :email, "email" %></td>
       <td><%= f.text_field :email %></td>
     </tr>
+
     <tr>
-      <td><%= f.label "hasło" %></td>
+      <td><%= f.label :password, "hasło" %></td>
       <td><%= f.password_field :password %></td>
     </tr>
+
     <tr>
-      <td><%= f.label "potwierdź hasło" %></td>
+      <td><%= f.label :password_confirmation, "potwierdź hasło" %></td>
       <td><%= f.password_field :password_confirmation %></td>
     </tr>
+
+    <tr>
+      <td><%= f.label :footnote, "notka pod postami" %></td>
+      <td><%= f.text_area :footnote %></td>
     </tr>
+
+    <tr>
+      <td><%= f.label :avatar_url, "link do avatara" %></td>
+      <td><%= f.text_field :avatar_url %></td>
+    </tr>
+
   </table>
 
-  <%= f.submit "zapisz zmiany" %>
+  <%= f.submit "zapisz zmiany", class: "btn" %>
 <% end %>

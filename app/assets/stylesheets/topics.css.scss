@@ -9,7 +9,12 @@
   padding: 10px;
   font-size: 0.7em;
   box-shadow: 2px 2px 2px;
-  }
+}
+
+.post_footnote {
+  position: absolute;
+  bottom: 0;
+}
 
 .single_post_form {
   background-color: #F7C265;
@@ -55,6 +60,8 @@
 
 .post_content {
   color: none;
+  position: relative;
+  min-height: 226px;
 }
 
 .submit_button {
