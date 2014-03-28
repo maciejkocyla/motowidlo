@@ -2,11 +2,11 @@
   
   <div class = "col-md-4">
 
-    <h3>zapraszamy na blogi:</h3>
+    <h4>nasze blogi:</h4>
     
     <%= render 'layouts/blog_section' %>
     
-    <h3>Kategorie: </h3>
+    <h4>Kategorie: </h4>
     <% main_categories.each do |category| %>
       <div class = "category_box">
         <div data-sub = <%= category.id %> ><%= link_to category.name, "javascript:void(0)" %></div>

@@ -1,11 +1,17 @@
-.blog_section{
+.blog_article{
+  padding: 10px;
   background-color: beige;
   box-shadow: 5px 5px 5px lightgrey;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .blog_section a, .blog_section a:hover, .blog_section a:visited {
   color: black;
   text-decoration: none;
+  font-family: "courier new";
+}
+
+.blog_article p {
+  font-family: "courier new";
 }

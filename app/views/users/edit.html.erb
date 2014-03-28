@@ -3,10 +3,25 @@
 <%= form_for @user do |f|%>
   <%= render 'shared/error_messages'%>
 
-  <%= f.text_field :name, value: "Imię" %>
-  <%= f.text_field :email, value: "email" %>
-  <%= f.password_field :password %>
-  <%= f.password_field :password_confirmation %>
+  <table>
+    <tr>
+      <td><%= f.label "nazwa użytkownika" %></td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "email" %></td>
+      <td><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "hasło" %></td>
+      <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td><%= f.label "potwierdź hasło" %></td>
+      <td><%= f.password_field :password_confirmation %></td>
+    </tr>
+    </tr>
+  </table>
 
   <%= f.submit "zapisz zmiany" %>
 <% end %>
