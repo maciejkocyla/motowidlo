@@ -28,7 +28,7 @@
 
         <div class = "post_content col-md-8">
           <% if post.content? %>
-            <%= raw(post.content.truncate(230, separator: /\s/)) %>
+            <%= raw(post.content) %>
           <% end %>
           <% if post.user && post.user.footnote? %>
             <div class = "post_footnote"> 
