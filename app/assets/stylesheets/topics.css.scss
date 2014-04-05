@@ -86,6 +86,17 @@
   font-size: 0.7em;
 }
 
+.topic_in_index .col-md-3 {
+  text-align: right;
+}
+
+.topic_in_index img {
+  width: 20px;
+  height: 20px;
+  margin-top: 5px;
+  margin-left: -5px;
+}
+
 .topic_in_index a, .topic_in_index a:hover {
   color: #000000;
   font-weight: bold;

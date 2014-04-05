@@ -2,7 +2,7 @@
 <div class = "navbar-content">
   <ul class = "nav navbar-nav topright_link">
     <% if signed_in? %>
-      <li><%= link_to "profil", current_user %></li>
+      <li><%= link_to "profil ( #{current_user.name} )", current_user %></li>
       <li><%= link_to "wyloguj", wyloguj_path, method: "delete" %></li>
     <% else %>
       <li><%= link_to "zaloguj", zaloguj_path %></li>

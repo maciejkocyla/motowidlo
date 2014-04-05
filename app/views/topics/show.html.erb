@@ -30,7 +30,7 @@
           <% if post.content? %>
             <%= raw(post.content.truncate(230, separator: /\s/)) %>
           <% end %>
-          <% if post.user.footnote? %>
+          <% if post.user && post.user.footnote? %>
             <div class = "post_footnote"> 
               <div class = "divider col-md-12"></div>
               <%= post.user.footnote %>

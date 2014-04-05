@@ -13,6 +13,14 @@ class Topic < ActiveRecord::Base
      end
   end
 
+  def debaters
+    debaters = [ self.user ]
+    if self.posts.any?
+      self.posts.map { |post| debaters.push(post.user) unless debaters.include?(post.user) }
+    end
+    return debaters
+  end
+
   def how_fresh?
     ((Time.now - self.posts.last.created_at)/(3600 * 24)).to_i if self.posts.any?
   end

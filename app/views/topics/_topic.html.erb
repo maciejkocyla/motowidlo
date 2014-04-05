@@ -1,10 +1,26 @@
 <div class = "topic_in_index row topic_in_index_<%= Random.new.rand(1..3) %>">
   <div class = "col-md-9">
+    <div class = "col-md-1"> 
+      <% if topic.hot? %>
+        <%= image_tag "https://cdn4.iconfinder.com/data/icons/cia-operations/512/flame-512.png" %>
+      <% elsif %>
+        <%= image_tag "https://cdn3.iconfinder.com/data/icons/eldorado-stroke-weather/40/fog-512.png" %>
+      <% end %>
+    </div>
     <%= link_to topic.name.truncate(40), category_topic_path(topic.category, topic) %>
   </div>
-  <div class = "col-md-3">Posty: <%= topic.posts.count %>
+  <div class = "col-md-3">
+    <span class = "glyphicon glyphicon-comment"></span>
+    <% if !topic.heading.empty? %>
+      <%= topic.posts.count + 1 %>
+    <% else %>
+      <%= topic.posts.count %>
+    <% end %>
+    <span class = "glyphicon glyphicon-user"></span>
+    <%= topic.debaters.count %>
     <% if root? %>
-      <%= link_to "usuń", category_topic_path(topic.category, topic), method: :delete %>
+      <%= link_to raw("<span class = 'glyphicon glyphicon-trash'></span>
+"), category_topic_path(topic.category, topic), method: :delete %>
     <% end %>
   </div>
   <br/>

@@ -1,6 +1,6 @@
 module TopicsHelper
 
-  def last_topics(count)
+  def last_topics(count = 5)
     topics = Topic.all
     lastTopics = Array.new
     if topics.count >= count
