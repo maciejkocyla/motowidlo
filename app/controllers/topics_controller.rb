@@ -38,7 +38,7 @@ class TopicsController < ApplicationController
 
       if @topic.save
         flash[:success] = "temat został utworzony"
-        redirect_to [@category, @topic]
+        redirect_to category_topic_path(@category, @topic)
       else
         flash[:error] = "coś poszło nie tak"
       end
