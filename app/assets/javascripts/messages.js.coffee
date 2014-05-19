@@ -14,6 +14,11 @@ $(document).on "page:change", ->
     $('.modal_content').fadeOut()
 
   $('[data-activate-link]').click ->
+    $.ajax({
+      type: "POST",
+      url: "/messages/mark_as_read",
+      data: {sender_id: $(this).data('activate-link')}
+      })
     $('[data-message-link]').hide()
     $('.single_message').hide()
     $('#invisible_link_' + $(this).data('activate-link')).show()

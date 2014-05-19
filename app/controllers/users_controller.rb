@@ -41,6 +41,7 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+  
 
   private
 
@@ -56,4 +57,5 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id]) 
     redirect_to(root_url) unless current_user?(@user)
   end
+
 end

@@ -12,8 +12,11 @@ Motowidlo::Application.routes.draw do
 
   resources :sessions, only: [ :new, :create, :destroy ]
 
-  root 'categories#index'
-
+  
+  match '/' => 'categories#index', :constraints => {:subdomain => "forum"} , via: 'get'
+  root 'pages#homepage'
+  
+  match '/messages/mark_as_read', to: 'messages#mark_as_read', via: "post"
   match '/rejestracja',   to: 'users#new',         via: 'get' 
   match '/zaloguj',       to: 'sessions#new',      via: 'get'
   match '/wyloguj',       to: 'sessions#destroy',  via: 'delete'

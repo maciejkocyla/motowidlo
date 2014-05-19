@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :topics
   has_many :interests
   has_many :likes, through: :interests, source: :category
+  has_many :messages, foreign_key: "recipient_id"
 
   has_secure_password
 
@@ -30,6 +31,15 @@ class User < ActiveRecord::Base
       active.push(post.topic) unless active.include?(post.topic)
     end 
     return active
+  end
+
+  def unread_messages_count
+    self.messages.where(read: nil).count
+  end
+
+  def mark_messages_from_sender_id_as_read(sender)
+    self.messages.where(author_id: sender).update_all(read: true)
+    
   end
 
   private

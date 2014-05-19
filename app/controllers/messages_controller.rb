@@ -58,6 +58,10 @@ class MessagesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  def mark_as_read
+    current_user.mark_messages_from_sender_id_as_read(params[:sender_id])
+    render :text => 'ok'
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
